@@ -1,24 +1,19 @@
 package ru.beeline.marketing.tests;
 
-import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
-
-import java.util.Locale;
-
-public class AuthorizeTests extends TestBase {
+import ru.beeline.marketing.steps.AuthorizeSteps;
+public class AuthorizeTests {
 
     @Test
-    void authorizeAvailableUser() throws InterruptedException {
+    void authorizeAvailableUser() {
         String realNumber = "9015068354",
-                url = "https://marketing.beeline.ru/my-campaigns";
+                url = "https://marketing.beeline.ru/my-campaigns",
+                code = "0000";
 
-        authorizePage.openPage(url);
-        authorizePage.fillNumberField(realNumber);
-        authorizePage.clickEnter();
-        authorizePage.enterInvalidCode();
+        AuthorizeSteps authorizeSteps = new AuthorizeSteps();
 
-        authorizePage.assertTextAboutInvalidCode();
-
-
+        authorizeSteps.openMainPage(url);
+        authorizeSteps.fillNumberFieldAndEnter(realNumber);
+        authorizeSteps.enterInvalidCodeAndAssertText(code);
     }
 }

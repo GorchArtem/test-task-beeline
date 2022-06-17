@@ -27,12 +27,13 @@ public class AuthorizePage {
         submitButton.click();
     }
 
-    public void enterInvalidCode() {
+    public void enterInvalidCode(String code) {
         codeField.click();
-        codeField.sendKeys("0000");
+        codeField.sendKeys(code);
     }
 
 
+    //Проверки
     public void assertTextAboutInvalidCode() {
         textAboutInvalidCode.shouldHave(text("Неверный код"));
     }
