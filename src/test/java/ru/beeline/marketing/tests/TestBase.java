@@ -1,7 +1,7 @@
 package ru.beeline.marketing.tests;
 
-import ru.beeline.marketing.pages.RegistrationPage;
+import ru.beeline.marketing.pages.AuthorizePage;
 
 public class TestBase {
-    RegistrationPage registrationPage = new RegistrationPage();
+    AuthorizePage authorizePage = new AuthorizePage();
 }
