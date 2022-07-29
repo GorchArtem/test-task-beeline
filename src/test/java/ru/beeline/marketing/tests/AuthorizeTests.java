@@ -14,6 +14,8 @@ public class AuthorizeTests {
 
         authorizeSteps.openMainPage(url);
         authorizeSteps.fillNumberFieldAndEnter(realNumber);
-        authorizeSteps.enterInvalidCodeAndAssertText(code);
+        authorizeSteps.enterInvalidCode(code);
+
+        authorizeSteps.assertInvalidCode();
     }
 }

@@ -17,11 +17,20 @@ public class AuthorizeSteps {
         authorizePage.clickEnter();
     }
 
-    @Step("Ввод инвалидного кода аутентификации и проверка появления сообщения о неверном коде")
-    public void enterInvalidCodeAndAssertText(String code) {
+    @Step("Ввод неверного кода аутентификации")
+    public void enterInvalidCode(String code) {
         authorizePage.enterInvalidCode(code);
+    }
+
+
+
+    //Assertions
+
+    @Step("Проверка появления сообщения о неверном коде")
+    public void assertInvalidCode() {
         authorizePage.assertTextAboutInvalidCode();
     }
+
 
 
 }
